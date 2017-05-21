@@ -1,0 +1,586 @@
+###############################################################################
+#                                                                             #
+# IAR ELF Linker V6.30.1.53127/W32 for ARM              16/Aug/2013  16:43:25 #
+# Copyright 2007-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Output file  =  F:\k60程序\0815\bin\Flash\Exe\saonian_GO.out             #
+#    Map file     =  F:\k60程序\0815\bin\Flash\List\saonian_GO.map            #
+#    Command line =  F:\k60程序\0815\bin\Flash\Obj\LQ12864.o                  #
+#                    F:\k60程序\0815\bin\Flash\Obj\common.o                   #
+#                    F:\k60程序\0815\bin\Flash\Obj\crt0.o                     #
+#                    F:\k60程序\0815\bin\Flash\Obj\gpio.o                     #
+#                    F:\k60程序\0815\bin\Flash\Obj\isr.o                      #
+#                    F:\k60程序\0815\bin\Flash\Obj\light.o                    #
+#                    F:\k60程序\0815\bin\Flash\Obj\main.o                     #
+#                    F:\k60程序\0815\bin\Flash\Obj\start.o                    #
+#                    F:\k60程序\0815\bin\Flash\Obj\sysinit.o                  #
+#                    F:\k60程序\0815\bin\Flash\Obj\uart.o                     #
+#                    F:\k60程序\0815\bin\Flash\Obj\vectors.o                  #
+#                    F:\k60程序\0815\bin\Flash\Obj\wdog.o --redirect          #
+#                    _Printf=_PrintfFull --redirect _Scanf=_ScanfFull -o      #
+#                    F:\k60程序\0815\bin\Flash\Exe\saonian_GO.out --map       #
+#                    F:\k60程序\0815\bin\Flash\List\saonian_GO.map --config   #
+#                    F:\k60程序\0815\src\Project_Settings\Link\Pflash.icf     #
+#                    --semihosting --entry __iar_program_start --vfe          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x00000000 { ro section .intvec };
+"A2":  place at 0x00000410 { ro section .noinit };
+"P1":  place in [from 0x00000000 to 0x00080000] { ro, block CodeRelocate };
+"P2":  place in [from 0x1fff0410 to 0x20010000] {
+          rw, block CodeRelocateRam, block CSTACK, block HEAP };
+
+  Section              Kind        Address     Size  Object
+  -------              ----        -------     ----  ------
+"A1":                                         0x410
+  .intvec              const    0x00000000    0x410  vectors.o [1]
+                              - 0x00000410    0x410
+
+"A2":                                          0x3c
+  .noinit              ro code  0x00000410     0x3c  crt0.o [1]
+                              - 0x0000044c     0x3c
+
+"P1":                                       0x13804
+  .text                ro code  0x0000044c  0x126c4  main.o [1]
+  .text                ro code  0x00012b10     0xc0  gpio.o [1]
+  .text                ro code  0x00012bd0    0x6ea  LQ12864.o [1]
+  .text                ro code  0x000132ba     0x22  zero_init3.o [4]
+  .text                ro code  0x000132dc    0x118  common.o [1]
+  .text                ro code  0x000133f4      0x6  ABImemclr4.o [4]
+  .text                ro code  0x000133fa      0x2  vectors.o [1]
+  .text                ro code  0x000133fc     0x56  ABImemcpy.o [4]
+  .text                ro code  0x00013454     0x32  ABImemset48.o [4]
+  .rodata              const    0x00013488    0x228  LQ12864.o [1]
+  Veneer               ro code  0x000136b0      0x8  - Linker created -
+  .text                ro code  0x000136b8    0x1ac  sysinit.o [1]
+  .rodata              const    0x00013864     0xdc  main.o [1]
+  .text                ro code  0x00013940     0xb0  start.o [1]
+  .text                ro code  0x000139f0     0x38  wdog.o [1]
+  .data_init                    0x00013a28     0x58  <Block>
+    Initializer bytes  ro data  0x00013a28     0x58  <for .data-1>
+  CodeRelocate                  0x00013a80     0x4c  <Block>
+    Initializer bytes  ro data  0x00013a80     0x4c  <for CodeRelocateRam-1>
+  .rodata              const    0x00013acc     0x3c  main.o [1]
+  .text                ro code  0x00013b08     0x2c  data_init3.o [4]
+  .iar.init_table      const    0x00013b34     0x10  - Linker created -
+  .text                ro code  0x00013b44     0x16  cmain.o [4]
+  .text                ro code  0x00013b5a      0x4  low_level_init.o [3]
+  .text                ro code  0x00013b5e      0x4  exit.o [3]
+  .text                ro code  0x00013b64      0xa  cexit.o [4]
+  .text                ro code  0x00013b70     0x14  exit.o [5]
+  .rodata              const    0x00013b84     0x10  main.o [1]
+  .rodata              const    0x00013b94     0x10  main.o [1]
+  .rodata              const    0x00013ba4     0x10  main.o [1]
+  .rodata              const    0x00013bb4     0x10  main.o [1]
+  .rodata              const    0x00013bc4     0x10  main.o [1]
+  .rodata              const    0x00013bd4     0x10  main.o [1]
+  .rodata              const    0x00013be4      0xc  main.o [1]
+  .rodata              const    0x00013bf0      0xc  main.o [1]
+  .text                ro code  0x00013bfc      0xc  cstartup_M.o [4]
+  .rodata              const    0x00013c08      0x8  main.o [1]
+  .rodata              const    0x00013c10      0x8  main.o [1]
+  .rodata              const    0x00013c18      0x8  main.o [1]
+  .rodata              const    0x00013c20      0x8  main.o [1]
+  .rodata              const    0x00013c28      0x8  main.o [1]
+  .rodata              const    0x00013c30      0x8  main.o [1]
+  .rodata              const    0x00013c38      0x8  main.o [1]
+  .rodata              const    0x00013c40      0x8  main.o [1]
+  .rodata              const    0x00013c48      0x8  main.o [1]
+  .rodata              const    0x00013c50      0x0  bwt_init3c.o [4]
+                              - 0x00013c50  0x13804
+
+"P2", part 1 of 2:                             0xa4
+  .data                         0x1fff0410     0x58  <Block>
+    .data-1                     0x1fff0410     0x57  <Init block>
+      .data            inited   0x1fff0410     0x10  main.o [1]
+      .data            inited   0x1fff0420      0x1  main.o [1]
+      .data            inited   0x1fff0422      0x2  main.o [1]
+      .data            inited   0x1fff0424      0x2  main.o [1]
+      .data            inited   0x1fff0426      0x2  main.o [1]
+      .data            inited   0x1fff0428      0x2  main.o [1]
+      .data            inited   0x1fff042a      0x2  main.o [1]
+      .data            inited   0x1fff042c     0x20  main.o [1]
+      .data            inited   0x1fff044c      0x2  main.o [1]
+      .data            inited   0x1fff044e      0x1  main.o [1]
+      .data            inited   0x1fff0450      0x2  main.o [1]
+      .data            inited   0x1fff0452      0x2  main.o [1]
+      .data            inited   0x1fff0454      0x2  main.o [1]
+      .data            inited   0x1fff0456      0x1  main.o [1]
+      .data            inited   0x1fff0457      0x1  main.o [1]
+      .data            inited   0x1fff0458      0x1  main.o [1]
+      .data            inited   0x1fff0459      0x1  main.o [1]
+      .data            inited   0x1fff045a      0x1  main.o [1]
+      .data            inited   0x1fff045b      0x1  main.o [1]
+      .data            inited   0x1fff045c      0x1  main.o [1]
+      .data            inited   0x1fff045d      0x1  main.o [1]
+      .data            inited   0x1fff045e      0x1  main.o [1]
+      .data            inited   0x1fff045f      0x1  main.o [1]
+      .data            inited   0x1fff0460      0x1  main.o [1]
+      .data            inited   0x1fff0461      0x1  main.o [1]
+      .data            inited   0x1fff0462      0x1  main.o [1]
+      .data            inited   0x1fff0463      0x1  main.o [1]
+      .data            inited   0x1fff0464      0x1  main.o [1]
+      .data            inited   0x1fff0465      0x1  main.o [1]
+      .data            inited   0x1fff0466      0x1  main.o [1]
+  CodeRelocateRam               0x1fff0468     0x4c  <Block>
+    CodeRelocateRam-1           0x1fff0468     0x4c  <Init block>
+      .textrw          inited   0x1fff0468     0x4c  sysinit.o [1]
+                              - 0x1fff04b4     0xa4
+
+"P2", part 2 of 2:                           0x26ac
+  .bss                          0x1fff04b4   0x26ac  <Block>
+    .bss               zero     0x1fff04b4     0x44  main.o [1]
+    .bss               zero     0x1fff04f8      0x4  main.o [1]
+    .bss               zero     0x1fff04fc      0x4  main.o [1]
+    .bss               zero     0x1fff0500   0x2260  main.o [1]
+    .bss               zero     0x1fff2760     0x70  main.o [1]
+    .bss               zero     0x1fff27d0     0x70  main.o [1]
+    .bss               zero     0x1fff2840     0x38  main.o [1]
+    .bss               zero     0x1fff2878     0x68  main.o [1]
+    .bss               zero     0x1fff28e0     0x7c  main.o [1]
+    .bss               zero     0x1fff295c     0x54  main.o [1]
+    .bss               zero     0x1fff29b0     0x90  main.o [1]
+    .bss               zero     0x1fff2a40      0x4  main.o [1]
+    .bss               zero     0x1fff2a44     0x38  main.o [1]
+    .bss               zero     0x1fff2a7c      0x8  main.o [1]
+    .bss               zero     0x1fff2a84      0x8  main.o [1]
+    .bss               zero     0x1fff2a8c      0x4  main.o [1]
+    .bss               zero     0x1fff2a90      0x8  main.o [1]
+    .bss               zero     0x1fff2a98     0x3c  main.o [1]
+    .bss               zero     0x1fff2ad4      0x4  sysinit.o [1]
+    .bss               zero     0x1fff2ad8      0x4  sysinit.o [1]
+    .bss               zero     0x1fff2adc      0x4  sysinit.o [1]
+    .bss               zero     0x1fff2ae0      0x2  main.o [1]
+    .bss               zero     0x1fff2ae2      0x2  main.o [1]
+    .bss               zero     0x1fff2ae4      0x2  main.o [1]
+    .bss               zero     0x1fff2ae6      0x2  main.o [1]
+    .bss               zero     0x1fff2ae8      0x2  main.o [1]
+    .bss               zero     0x1fff2aea      0x2  main.o [1]
+    .bss               zero     0x1fff2aec      0x2  main.o [1]
+    .bss               zero     0x1fff2aee      0x2  main.o [1]
+    .bss               zero     0x1fff2af0      0x2  main.o [1]
+    .bss               zero     0x1fff2af2      0x2  main.o [1]
+    .bss               zero     0x1fff2af4      0x2  main.o [1]
+    .bss               zero     0x1fff2af6      0x2  main.o [1]
+    .bss               zero     0x1fff2af8      0x2  main.o [1]
+    .bss               zero     0x1fff2afa      0x2  main.o [1]
+    .bss               zero     0x1fff2afc      0x2  main.o [1]
+    .bss               zero     0x1fff2afe      0x2  main.o [1]
+    .bss               zero     0x1fff2b00      0x2  main.o [1]
+    .bss               zero     0x1fff2b02      0x2  main.o [1]
+    .bss               zero     0x1fff2b04      0x2  main.o [1]
+    .bss               zero     0x1fff2b06      0x2  main.o [1]
+    .bss               zero     0x1fff2b08      0x2  main.o [1]
+    .bss               zero     0x1fff2b0a      0x2  main.o [1]
+    .bss               zero     0x1fff2b0c      0x2  main.o [1]
+    .bss               zero     0x1fff2b0e      0x2  main.o [1]
+    .bss               zero     0x1fff2b10      0x2  main.o [1]
+    .bss               zero     0x1fff2b12      0x2  main.o [1]
+    .bss               zero     0x1fff2b14      0x2  main.o [1]
+    .bss               zero     0x1fff2b16      0x2  main.o [1]
+    .bss               zero     0x1fff2b18      0x2  main.o [1]
+    .bss               zero     0x1fff2b1a      0x2  main.o [1]
+    .bss               zero     0x1fff2b1c      0x2  main.o [1]
+    .bss               zero     0x1fff2b1e      0x2  main.o [1]
+    .bss               zero     0x1fff2b20      0x2  main.o [1]
+    .bss               zero     0x1fff2b22      0x2  main.o [1]
+    .bss               zero     0x1fff2b24      0x2  main.o [1]
+    .bss               zero     0x1fff2b26      0x2  main.o [1]
+    .bss               zero     0x1fff2b28      0x2  main.o [1]
+    .bss               zero     0x1fff2b2a      0x2  main.o [1]
+    .bss               zero     0x1fff2b2c      0x2  main.o [1]
+    .bss               zero     0x1fff2b2e      0x2  main.o [1]
+    .bss               zero     0x1fff2b30      0x2  main.o [1]
+    .bss               zero     0x1fff2b32      0x2  main.o [1]
+    .bss               zero     0x1fff2b34      0x2  main.o [1]
+    .bss               zero     0x1fff2b36      0x2  main.o [1]
+    .bss               zero     0x1fff2b38      0x2  main.o [1]
+    .bss               zero     0x1fff2b3a      0x2  main.o [1]
+    .bss               zero     0x1fff2b3c      0x2  main.o [1]
+    .bss               zero     0x1fff2b3e      0x2  main.o [1]
+    .bss               zero     0x1fff2b40      0x2  main.o [1]
+    .bss               zero     0x1fff2b42      0x2  main.o [1]
+    .bss               zero     0x1fff2b44      0x2  main.o [1]
+    .bss               zero     0x1fff2b46      0x2  main.o [1]
+    .bss               zero     0x1fff2b48      0x2  main.o [1]
+    .bss               zero     0x1fff2b4a      0x1  main.o [1]
+    .bss               zero     0x1fff2b4b      0x1  main.o [1]
+    .bss               zero     0x1fff2b4c      0x1  main.o [1]
+    .bss               zero     0x1fff2b4d      0x1  main.o [1]
+    .bss               zero     0x1fff2b4e      0x1  main.o [1]
+    .bss               zero     0x1fff2b4f      0x1  main.o [1]
+    .bss               zero     0x1fff2b50      0x1  main.o [1]
+    .bss               zero     0x1fff2b51      0x1  main.o [1]
+    .bss               zero     0x1fff2b52      0x1  main.o [1]
+    .bss               zero     0x1fff2b53      0x1  main.o [1]
+    .bss               zero     0x1fff2b54      0x1  main.o [1]
+    .bss               zero     0x1fff2b55      0x1  main.o [1]
+    .bss               zero     0x1fff2b56      0x1  main.o [1]
+    .bss               zero     0x1fff2b57      0x1  main.o [1]
+    .bss               zero     0x1fff2b58      0x1  main.o [1]
+    .bss               zero     0x1fff2b59      0x1  main.o [1]
+    .bss               zero     0x1fff2b5a      0x1  main.o [1]
+    .bss               zero     0x1fff2b5b      0x1  main.o [1]
+    .bss               zero     0x1fff2b5c      0x1  main.o [1]
+    .bss               zero     0x1fff2b5d      0x1  main.o [1]
+    .bss               zero     0x1fff2b5e      0x1  main.o [1]
+    .bss               zero     0x1fff2b5f      0x1  main.o [1]
+                              - 0x1fff2b60   0x26ac
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x26ac:
+          0x1fff04b4  0x26ac
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  rw code  ro data  rw data
+    ------            -------  -------  -------  -------
+F:\k60程序\0815\bin\Flash\Obj: [1]
+    LQ12864.o           1 770               552
+    common.o              280
+    crt0.o                 60
+    gpio.o                192
+    main.o             75 460               559    9 973
+    start.o               176
+    sysinit.o             428       76       76       12
+    vectors.o               2             1 040
+    wdog.o                 56
+    ----------------------------------------------------
+    Total:             78 424       76    2 227    9 985
+
+command line: [2]
+    ----------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                  4
+    low_level_init.o        4
+    ----------------------------------------------------
+    Total:                  8
+
+rt7M_tl.a: [4]
+    ABImemclr4.o            6
+    ABImemcpy.o            86
+    ABImemset48.o          50
+    bwt_init3c.o
+    cexit.o                10
+    cmain.o                22
+    cstartup_M.o           12
+    data_init3.o           44
+    zero_init3.o           34
+    ----------------------------------------------------
+    Total:                264
+
+shb_l.a: [5]
+    exit.o                 20
+    ----------------------------------------------------
+    Total:                 20
+
+    Gaps                    6                 2        3
+    Linker created          8                17
+--------------------------------------------------------
+    Grand Total:       78 730       76    2 246    9 988
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address    Size  Type      Object
+-----                      -------    ----  ----      ------
+.bss$$Base              0x1fff04b4           --   Gb  - Linker created -
+.bss$$Limit             0x1fff2b60           --   Gb  - Linker created -
+.data$$Base             0x1fff0410           --   Gb  - Linker created -
+.data$$Limit            0x1fff0468           --   Gb  - Linker created -
+.data_init$$Base        0x00013a28           --   Gb  - Linker created -
+.data_init$$Limit       0x00013a80           --   Gb  - Linker created -
+?main                   0x00013b45          Code  Gb  cmain.o [4]
+BW                      0x1fff2878    0x68  Data  Gb  main.o [1]
+BW2                     0x1fff28e0    0x7c  Data  Gb  main.o [1]
+BW3                     0x1fff295c    0x54  Data  Gb  main.o [1]
+BW4                     0x1fff29b0    0x90  Data  Gb  main.o [1]
+BW_filter               0x00001cb5    0xd6  Code  Gb  main.o [1]
+CH451_GetKeyValue       0x000004a3    0xcc  Code  Gb  main.o [1]
+CH451_WriteCommand      0x0000044d    0x56  Code  Gb  main.o [1]
+CH451_ini               0x0000056f    0x38  Code  Gb  main.o [1]
+Car_Speed               0x00000d79   0x16a  Code  Gb  main.o [1]
+CodeRelocate$$Base      0x00013a80           --   Gb  - Linker created -
+CodeRelocate$$Limit     0x00013acc           --   Gb  - Linker created -
+CodeRelocateRam$$Base   0x1fff0468           --   Gb  - Linker created -
+CodeRelocateRam$$Limit  0x1fff04b4           --   Gb  - Linker created -
+DMA0_Init               0x0000147d    0xa6  Code  Gb  main.o [1]
+DMA_CHO_ISR             0x000015f1    0x32  Code  Gb  main.o [1]
+D_High                  0x1fff0459     0x1  Data  Gb  main.o [1]
+D_Low                   0x1fff0463     0x1  Data  Gb  main.o [1]
+D_Mid                   0x1fff045e     0x1  Data  Gb  main.o [1]
+D_piancha_high          0x1fff045a     0x1  Data  Gb  main.o [1]
+D_piancha_low           0x1fff0464     0x1  Data  Gb  main.o [1]
+D_piancha_mid           0x1fff045f     0x1  Data  Gb  main.o [1]
+Duo_Ji_PD               0x00000b65   0x210  Code  Gb  main.o [1]
+E                       0x1fff2b3c     0x2  Data  Gb  main.o [1]
+END_0                   0x1fff2b1e     0x2  Data  Gb  main.o [1]
+END_Line                0x1fff2b30     0x2  Data  Gb  main.o [1]
+END_Line_2              0x1fff2b4e     0x1  Data  Gb  main.o [1]
+Ec                      0x1fff2b3e     0x2  Data  Gb  main.o [1]
+Ec_old                  0x1fff2b40     0x2  Data  Gb  main.o [1]
+Ec_old_old              0x1fff2b42     0x2  Data  Gb  main.o [1]
+F6x8                    0x00013488   0x228  Data  Gb  LQ12864.o [1]
+FTM2_QUAD_Init          0x0000124d    0xa0  Code  Gb  main.o [1]
+GetKeyValue             0x1fff2b4a     0x1  Data  Gb  main.o [1]
+H_High                  0x1fff045b     0x1  Data  Gb  main.o [1]
+H_Low                   0x1fff0465     0x1  Data  Gb  main.o [1]
+H_Mid                   0x1fff0460     0x1  Data  Gb  main.o [1]
+High_Wu                 0x000007c1   0x126  Code  Gb  main.o [1]
+High_You                0x00000687   0x13a  Code  Gb  main.o [1]
+IO_Init                 0x000012f9    0xe0  Code  Gb  main.o [1]
+JIANPAN_ini             0x000005a7    0x64  Code  Gb  main.o [1]
+Judge_slope             0x0000c1b5    0x90  Code  Gb  main.o [1]
+Judge_startline2        0x0001177d   0x348  Code  Gb  main.o [1]
+KeyCode                 0x1fff0410    0x10  Data  Gb  main.o [1]
+KeyValue                0x1fff0420     0x1  Data  Gb  main.o [1]
+LCD_CLS                 0x00012d33    0x38  Code  Gb  LQ12864.o [1]
+LCD_CLS2                0x00013291    0x2a  Code  Gb  LQ12864.o [1]
+LCD_DLY_ms              0x00012d6b    0x1a  Code  Gb  LQ12864.o [1]
+LCD_Fill                0x00012cf7    0x3c  Code  Gb  LQ12864.o [1]
+LCD_Init                0x00012d85   0x120  Code  Gb  LQ12864.o [1]
+LCD_P1                  0x1fff2b51     0x1  Data  Gb  main.o [1]
+LCD_P3                  0x1fff2b52     0x1  Data  Gb  main.o [1]
+LCD_P6x8Str             0x00012ef5    0x7a  Code  Gb  LQ12864.o [1]
+LCD_P6x8Str_1           0x000131ff    0x74  Code  Gb  LQ12864.o [1]
+LCD_P6x8Str_3           0x0001305d    0xb0  Code  Gb  LQ12864.o [1]
+LCD_P6x8Str_5           0x00012f6f    0xee  Code  Gb  LQ12864.o [1]
+LCD_P6x8Str_FuHao_3     0x0001310d    0xf2  Code  Gb  LQ12864.o [1]
+LCD_PutPixel            0x00012ea5    0x50  Code  Gb  LQ12864.o [1]
+LCD_Set_Pos             0x00012ccb    0x2c  Code  Gb  LQ12864.o [1]
+LCD_WrCmd               0x00012c51    0x7a  Code  Gb  LQ12864.o [1]
+LCD_WrDat               0x00012bd1    0x7e  Code  Gb  LQ12864.o [1]
+LianJie                 0x00001925    0x8c  Code  Gb  main.o [1]
+LianJie_center          0x00001d9d    0x68  Code  Gb  main.o [1]
+Mid_Wu                  0x00000a07   0x13a  Code  Gb  main.o [1]
+Motor                   0x1fff2a84     0x8  Data  Gb  main.o [1]
+Motor_control           0x0000c3bb    0xe4  Code  Gb  main.o [1]
+P_High                  0x1fff0458     0x1  Data  Gb  main.o [1]
+P_Low                   0x1fff0462     0x1  Data  Gb  main.o [1]
+P_Mid                   0x1fff045d     0x1  Data  Gb  main.o [1]
+P_timer                 0x1fff04f8     0x4  Data  Gb  main.o [1]
+Region$$Table$$Base     0x00013b34           --   Gb  - Linker created -
+Region$$Table$$Limit    0x00013b44           --   Gb  - Linker created -
+Servo                   0x1fff2a7c     0x8  Data  Gb  main.o [1]
+Servo_D_zhidao          0x1fff0457     0x1  Data  Gb  main.o [1]
+Servo_Left              0x1fff0424     0x2  Data  Gb  main.o [1]
+Servo_Middle            0x1fff0422     0x2  Data  Gb  main.o [1]
+Servo_P_zhidao          0x1fff0456     0x1  Data  Gb  main.o [1]
+Servo_Right             0x1fff0426     0x2  Data  Gb  main.o [1]
+Servo_value             0x1fff2b10     0x2  Data  Gb  main.o [1]
+Servo_value_old         0x1fff044c     0x2  Data  Gb  main.o [1]
+Start_Detection         0x000019c5    0x8e  Code  Gb  main.o [1]
+Start_Detection_2       0x00001a75    0x8e  Code  Gb  main.o [1]
+Start_Detection_3       0x00001b31    0x8e  Code  Gb  main.o [1]
+Start_Detection_4       0x00001bd5    0x8e  Code  Gb  main.o [1]
+Start_Line              0x00001ef1   0x320  Code  Gb  main.o [1]
+T_High                  0x1fff045c     0x1  Data  Gb  main.o [1]
+T_Low                   0x1fff0466     0x1  Data  Gb  main.o [1]
+T_Mid                   0x1fff0461     0x1  Data  Gb  main.o [1]
+UART0_Init              0x000013e5    0x98  Code  Gb  main.o [1]
+Very_straight           0x1fff2b4c     0x1  Data  Gb  main.o [1]
+X_LineBend              0x0000de3f    0xf8  Code  Gb  main.o [1]
+__BOOT_STACK_ADDRESS {Abs}
+                        0x2000fff8           --   Gb  command line/config [2]
+__VECTOR_RAM {Abs}      0x1fff0000           --   Gb  command line/config [2]
+__VECTOR_TABLE {Abs}    0x00000000           --   Gb  command line/config [2]
+__aeabi_memclr4         0x000133f5          Code  Gb  ABImemclr4.o [4]
+__aeabi_memcpy4         0x000133fd          Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy8         0x000133fd          Code  Gb  ABImemcpy.o [4]
+__cmain                 0x00013b45          Code  Gb  cmain.o [4]
+__exit                  0x00013b71    0x14  Code  Gb  exit.o [5]
+__iar_Memset4_word      0x00013455          Code  Gb  ABImemset48.o [4]
+__iar_Memset8_word      0x00013455          Code  Gb  ABImemset48.o [4]
+__iar_SB                0x00013c50          Data  Gb  bwt_init3c.o [4]
+__iar_data_init3        0x00013b09    0x2c  Code  Gb  data_init3.o [4]
+__iar_program_start     0x00013bfd          Code  Gb  cstartup_M.o [4]
+__iar_zero_init3        0x000132bb    0x22  Code  Gb  zero_init3.o [4]
+__low_level_init        0x00013b5b     0x4  Code  Gb  low_level_init.o [3]
+__startup               0x00000411          Code  Gb  crt0.o [1]
+__vector_table          0x00000000   0x410  Data  Gb  vectors.o [1]
+_call_main              0x00013b51          Code  Gb  cmain.o [4]
+_exit                   0x00013b65          Code  Gb  cexit.o [4]
+_main                   0x00013b57          Code  Gb  cmain.o [4]
+abs                     0x00001821    0x12  Code  Gb  main.o [1]
+bianyan                 0x1fff2760    0x70  Data  Gb  main.o [1]
+bianyan2                0x1fff27d0    0x70  Data  Gb  main.o [1]
+bitdata                 0x1fff04b4    0x44  Data  Gb  main.o [1]
+bitnum                  0x1fff2ae4     0x2  Data  Gb  main.o [1]
+car_speed               0x1fff044e     0x1  Data  Gb  main.o [1]
+center                  0x1fff2840    0x38  Data  Gb  main.o [1]
+center_filter           0x00001e11    0x74  Code  Gb  main.o [1]
+choose_PD               0x000033bd  0x89f0  Code  Gb  main.o [1]
+common_startup          0x00013955    0x74  Code  Gb  start.o [1]
+core_clk_khz            0x1fff2ad4     0x4  Data  Gb  sysinit.o [1]
+core_clk_mhz            0x1fff2ad8     0x4  Data  Gb  sysinit.o [1]
+data_table              0x00013864    0xdc  Data  Gb  main.o [1]
+default_isr             0x000133fb     0x2  Code  Gb  vectors.o [1]
+delays                  0x000017ed    0x34  Code  Gb  main.o [1]
+disable_irq             0x00013373    0x5a  Code  Gb  common.o [1]
+enable_irq              0x000132e3    0x90  Code  Gb  common.o [1]
+enable_pit_interrupt    0x0000159d    0x50  Code  Gb  main.o [1]
+exit                    0x00013b5f     0x4  Code  Gb  exit.o [3]
+fb_clk_init             0x00013717    0x16  Code  Gb  sysinit.o [1]
+find_bianyan            0x0000df5d  0x3816  Code  Gb  main.o [1]
+finish                  0x1fff2b53     0x1  Data  Gb  main.o [1]
+gpio_Get                0x00012bc7     0xa  Code  Gb  gpio.o [1]
+gpio_ctrl               0x00012ba5    0x22  Code  Gb  gpio.o [1]
+gpio_init               0x00012b11    0x7a  Code  Gb  gpio.o [1]
+high                    0x1fff2b06     0x2  Data  Gb  main.o [1]
+high_0                  0x1fff2b00     0x2  Data  Gb  main.o [1]
+high_now                0x1fff2b16     0x2  Data  Gb  main.o [1]
+high_now_0              0x1fff2b1c     0x2  Data  Gb  main.o [1]
+hw_FTM0_init            0x000010c9   0x17c  Code  Gb  main.o [1]
+hw_FTM1_init            0x00000fc1    0xf6  Code  Gb  main.o [1]
+hw_pit_init             0x00001523    0x74  Code  Gb  main.o [1]
+i_old                   0x1fff2af2     0x2  Data  Gb  main.o [1]
+imagerow                0x1fff2a40     0x4  Data  Gb  main.o [1]
+ir_deal                 0x0000060b    0x7c  Code  Gb  main.o [1]
+judage_xuxian           0x0000c9c1    0xb0  Code  Gb  main.o [1]
+judge_locus_0           0x0000bde3   0x3d2  Code  Gb  main.o [1]
+judge_small_S           0x00003345    0x5e  Code  Gb  main.o [1]
+limit                   0x00001833    0x18  Code  Gb  main.o [1]
+line                    0x000030f1    0x5e  Code  Gb  main.o [1]
+low                     0x1fff2b02     0x2  Data  Gb  main.o [1]
+low_0                   0x1fff2afc     0x2  Data  Gb  main.o [1]
+low_now                 0x1fff2b12     0x2  Data  Gb  main.o [1]
+low_now_0               0x1fff2b18     0x2  Data  Gb  main.o [1]
+m                       0x1fff2b50     0x1  Data  Gb  main.o [1]
+main                    0x00011add   0xf30  Code  Gb  main.o [1]
+max                     0x0000184b    0x12  Code  Gb  main.o [1]
+mid                     0x1fff2b04     0x2  Data  Gb  main.o [1]
+mid_0                   0x1fff2afe     0x2  Data  Gb  main.o [1]
+mid_now                 0x1fff2b14     0x2  Data  Gb  main.o [1]
+mid_now_0               0x1fff2b1a     0x2  Data  Gb  main.o [1]
+min                     0x0000185d    0x12  Code  Gb  main.o [1]
+mo_hu                   0x1fff042c    0x20  Data  Gb  main.o [1]
+motor_fuzzy             0x00002535   0x60a  Code  Gb  main.o [1]
+periph_clk_khz          0x1fff2adc     0x4  Data  Gb  sysinit.o [1]
+pit0_isr                0x0000173d    0x6c  Code  Gb  main.o [1]
+pit1_isr                0x000016ef    0x28  Code  Gb  main.o [1]
+pit2_isr                0x000017a9    0x28  Code  Gb  main.o [1]
+pll_init                0x0001372d    0xf6  Code  Gb  sysinit.o [1]
+pllinit180M             0x00000ef5    0xc2  Code  Gb  main.o [1]
+porta_isr               0x00001629    0x38  Code  Gb  main.o [1]
+portb_isr               0x00001669    0x86  Code  Gb  main.o [1]
+portc_isr               0x0000171d    0x1c  Code  Gb  main.o [1]
+position_diff           0x1fff2b0c     0x2  Data  Gb  main.o [1]
+position_now            0x1fff2b0a     0x2  Data  Gb  main.o [1]
+position_now_D          0x1fff2aee     0x2  Data  Gb  main.o [1]
+position_now_P          0x1fff2aea     0x2  Data  Gb  main.o [1]
+position_now_low        0x1fff2b0e     0x2  Data  Gb  main.o [1]
+position_now_low_P      0x1fff2aec     0x2  Data  Gb  main.o [1]
+position_old            0x1fff0450     0x2  Data  Gb  main.o [1]
+position_old_old        0x1fff0452     0x2  Data  Gb  main.o [1]
+position_old_old_old    0x1fff0454     0x2  Data  Gb  main.o [1]
+pulse                   0x1fff2af6     0x2  Data  Gb  main.o [1]
+pulse_old               0x1fff2af8     0x2  Data  Gb  main.o [1]
+pulse_old_old           0x1fff2afa     0x2  Data  Gb  main.o [1]
+ramp_flag               0x1fff2b4d     0x1  Data  Gb  main.o [1]
+receive_flag            0x1fff2ae6     0x2  Data  Gb  main.o [1]
+row                     0x1fff04fc     0x4  Data  Gb  main.o [1]
+row_F                   0x1fff2a44    0x38  Data  Gb  main.o [1]
+s_old                   0x1fff2b2e     0x2  Data  Gb  main.o [1]
+sai_dao_lei_xing        0x1fff2b59     0x1  Data  Gb  main.o [1]
+see_distance            0x1fff2ae8     0x2  Data  Gb  main.o [1]
+servo                   0x1fff2a8c     0x4  Data  Gb  main.o [1]
+servo_d                 0x1fff2b5f     0x1  Data  Gb  main.o [1]
+set_speed               0x0000186f    0x3c  Code  Gb  main.o [1]
+set_sys_dividers        0x1fff0469    0x4c  Code  Gb  sysinit.o [1]
+slope_flag              0x1fff2af0     0x2  Data  Gb  main.o [1]
+speed_Very_straight     0x1fff2b20     0x2  Data  Gb  main.o [1]
+speed_b                 0x1fff2b24     0x2  Data  Gb  main.o [1]
+speed_control           0x0000c245   0x176  Code  Gb  main.o [1]
+speed_cut_timer         0x1fff0428     0x2  Data  Gb  main.o [1]
+speed_fuzzy             0x00002b6d   0x584  Code  Gb  main.o [1]
+speed_m                 0x1fff2b26     0x2  Data  Gb  main.o [1]
+speed_ms                0x1fff2b2a     0x2  Data  Gb  main.o [1]
+speed_now               0x1fff2b2c     0x2  Data  Gb  main.o [1]
+speed_s                 0x1fff2b28     0x2  Data  Gb  main.o [1]
+speed_top               0x1fff2b22     0x2  Data  Gb  main.o [1]
+stages3                 0x0000bdb1    0x32  Code  Gb  main.o [1]
+stages_D                0x0000329b    0xaa  Code  Gb  main.o [1]
+stages_P                0x00003159    0xd4  Code  Gb  main.o [1]
+stages_low_P            0x0000322d    0x6e  Code  Gb  main.o [1]
+start                   0x00013941    0x14  Code  Gb  start.o [1]
+start_18_25_2           0x1fff2b5b     0x1  Data  Gb  main.o [1]
+start_25_35_2           0x1fff2b5c     0x1  Data  Gb  main.o [1]
+start_35_45_2           0x1fff2b5d     0x1  Data  Gb  main.o [1]
+start_45_55_2           0x1fff2b5e     0x1  Data  Gb  main.o [1]
+start_line2             0x1fff2b5a     0x1  Data  Gb  main.o [1]
+start_startline         0x1fff042a     0x2  Data  Gb  main.o [1]
+start_xian              0x1fff2b4b     0x1  Data  Gb  main.o [1]
+startflag               0x1fff2ae2     0x2  Data  Gb  main.o [1]
+sub                     0x1fff2a90     0x8  Data  Gb  main.o [1]
+sub_e                   0x00002415   0x108  Code  Gb  main.o [1]
+subjection_k            0x000018ab    0x28  Code  Gb  main.o [1]
+sysinit                 0x000136b9    0x48  Code  Gb  sysinit.o [1]
+threshold               0x0000c4c1   0x470  Code  Gb  main.o [1]
+timer                   0x1fff2ae0     0x2  Data  Gb  main.o [1]
+topline                 0x1fff2b08     0x2  Data  Gb  main.o [1]
+trace_clk_init          0x00013701    0x16  Code  Gb  sysinit.o [1]
+video                   0x1fff0500  0x2260  Data  Gb  main.o [1]
+wdog_disable            0x000139f1    0x16  Code  Gb  wdog.o [1]
+wdog_unlock             0x00013a09    0x16  Code  Gb  wdog.o [1]
+weizhi                  0x1fff2b38     0x2  Data  Gb  main.o [1]
+weizhi_old              0x1fff2b3a     0x2  Data  Gb  main.o [1]
+write_vtor              0x000132dd     0x6  Code  Gb  common.o [1]
+xiaoS_flag              0x1fff2af4     0x2  Data  Gb  main.o [1]
+xie_shizi               0x0000d1c5   0xc7a  Code  Gb  main.o [1]
+xie_shizi_flag_1        0x1fff2b32     0x2  Data  Gb  main.o [1]
+xie_shizi_flag_2        0x1fff2b34     0x2  Data  Gb  main.o [1]
+xie_shizi_flag_3        0x1fff2b36     0x2  Data  Gb  main.o [1]
+xu1                     0x1fff2b55     0x1  Data  Gb  main.o [1]
+xu2                     0x1fff2b56     0x1  Data  Gb  main.o [1]
+xu3                     0x1fff2b57     0x1  Data  Gb  main.o [1]
+xu4                     0x1fff2b58     0x1  Data  Gb  main.o [1]
+xu_xian2                0x1fff2b54     0x1  Data  Gb  main.o [1]
+xu_xian_bu              0x0000ca71   0x146  Code  Gb  main.o [1]
+xu_xian_cai             0x0000cbb9   0x5e8  Code  Gb  main.o [1]
+xu_xian_find            0x00002239   0x1cc  Code  Gb  main.o [1]
+zhidao_Wu               0x000008e7   0x120  Code  Gb  main.o [1]
+zhidao_flag             0x1fff2b4f     0x1  Data  Gb  main.o [1]
+
+
+[1] = F:\k60程序\0815\bin\Flash\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  78 730 bytes of readonly  code memory
+      76 bytes of readwrite code memory
+   2 246 bytes of readonly  data memory
+   9 988 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

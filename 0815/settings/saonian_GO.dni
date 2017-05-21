@@ -1,0 +1,58 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[FlashMemory]
+FlashEraseSelection=0 1        
+[DebugChecksum]
+Checksum=-311527473
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[JLinkDriver]
+TraceBufferSize=0x00010000
+TraceStallIfFIFOFull=0x00000000
+TracePortSize=0x00000004
+[Trace1]
+Enabled=0
+ShowSource=1
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=1
+Graph=0
+Symbiont=0
+Exclusions=
+[Breakpoints2]
+Count=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Disassemble mode]
+mode=0
+[Breakpoints]
+Count=0
+[Aliases]
+A0=_ "C:\Users\Administrator\Desktop\0602\src\main.c" ""
+A1=_ "C:\Users\Administrator\Desktop\0710\src\main.c" ""
+A2=_ "C:\Users\Administrator\Desktop\0715\src\main.c" ""
+A3=_ "C:\Users\Administrator\Desktop\0727\src\main.c" ""
+A4=_ "C:\Users\Administrator\Desktop\0803\src\main.c" ""
+A5=_ "E:\kinetis_IAR\19_LQ_DMAov7620\src\Project_Settings\Startup_Code\crt0.s" ""
+Count=6
+SuppressDialog=1
