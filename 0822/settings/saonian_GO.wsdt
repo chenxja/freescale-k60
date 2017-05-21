@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>saonian_GO/FLASH</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>151</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+    <Build><ColumnWidth0>16</ColumnWidth0><ColumnWidth1>533</ColumnWidth1><ColumnWidth2>564</ColumnWidth2><ColumnWidth3>101</ColumnWidth3></Build><TerminalIO/><Debug-Log><ColumnWidth0>16</ColumnWidth0><ColumnWidth1>1311</ColumnWidth1></Debug-Log></Static>
+    <Windows>
+      
+    <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-3531-1139</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>saonian_GO</ExpandedNode><ExpandedNode>saonian_GO/Output</ExpandedNode><ExpandedNode>saonian_GO/Sources</ExpandedNode><ExpandedNode>saonian_GO/Sources/C</ExpandedNode><ExpandedNode>saonian_GO/Sources/C/Component_C</ExpandedNode><ExpandedNode>saonian_GO/Sources/C/Component_C/gpio.c</ExpandedNode><ExpandedNode>saonian_GO/Sources/C/Component_C/light.c</ExpandedNode><ExpandedNode>saonian_GO/Sources/C/Component_C/uart.c</ExpandedNode><ExpandedNode>saonian_GO/Sources/C/Component_C/wdog.c</ExpandedNode><ExpandedNode>saonian_GO/Sources/C/Frame_C</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3><Tabs><Tab><Identity>TabID-1009-6544</Identity><TabName>Build</TabName><Factory>Build</Factory><Session/></Tab><Tab><Identity>TabID-5484-6665</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\keyboard_PD.h</Filename><XPos>0</XPos><YPos>209</YPos><SelStart>4097</SelStart><SelEnd>4097</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\main.c</Filename><XPos>0</XPos><YPos>4204</YPos><SelStart>111731</SelStart><SelEnd>111731</SelEnd></Tab><ActiveTab>1</ActiveTab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-01c70e78><key>iaridepm.enu1</key></Toolbar-01c70e78></Sizes></Row0><Row1><Sizes/></Row1></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>544</Bottom><Right>242</Right><x>-2</x><y>-2</y><xscreen>1</xscreen><yscreen>1</yscreen><sizeHorzCX>732</sizeHorzCX><sizeHorzCY>1458</sizeHorzCY><sizeVertCX>178624</sizeVertCX><sizeVertCY>795918</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>97</Bottom><Right>1368</Right><x>-2</x><y>-2</y><xscreen>1370</xscreen><yscreen>99</yscreen><sizeHorzCX>1002928</sizeHorzCX><sizeHorzCY>144315</sizeHorzCY><sizeVertCX>732</sizeVertCX><sizeVertCY>1458</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

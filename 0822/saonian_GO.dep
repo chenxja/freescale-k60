@@ -1,0 +1,1120 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>3073741479</fileChecksum>
+  <configuration>
+    <name>FLASH</name>
+    <outputs>
+      <file>$PROJ_DIR$\src\Sources\H\Component_H\wdog.h</file>
+      <file>$PROJ_DIR$\src\Project_Settings\Link\Pflash.icf</file>
+      <file>$PROJ_DIR$\src\Project_Settings\Startup_Code\crt0.s</file>
+      <file>$PROJ_DIR$\src\Project_Settings\Startup_Code\start.c</file>
+      <file>$PROJ_DIR$\src\Sources\C\Component_C\gpio.c</file>
+      <file>$PROJ_DIR$\src\Sources\C\Component_C\light.c</file>
+      <file>$PROJ_DIR$\src\Sources\C\Component_C\uart.c</file>
+      <file>$PROJ_DIR$\src\Sources\C\Component_C\wdog.c</file>
+      <file>$PROJ_DIR$\src\Sources\C\Frame_C\common.c</file>
+      <file>$PROJ_DIR$\src\Sources\C\Frame_C\sysinit.c</file>
+      <file>$PROJ_DIR$\src\Sources\C\Frame_C\vectors.c</file>
+      <file>$PROJ_DIR$\src\Sources\H\Component_H\gpio.h</file>
+      <file>$PROJ_DIR$\src\main.c</file>
+      <file>$PROJ_DIR$\src\Sources\C\isr.c</file>
+      <file>$PROJ_DIR$\src\Sources\H\Component_H\IR.h</file>
+      <file>$PROJ_DIR$\src\Sources\H\Component_H\light.h</file>
+      <file>$PROJ_DIR$\src\lptmr.h</file>
+      <file>$PROJ_DIR$\src\keyboard.h</file>
+      <file>$PROJ_DIR$\src\keyboard_PD.h</file>
+      <file>$PROJ_DIR$\src\Sources\H\Component_H\uart.h</file>
+      <file>$PROJ_DIR$\src\Sources\H\Frame_H\common.h</file>
+      <file>$PROJ_DIR$\src\Sources\H\Frame_H\MK60N512VMD100.h</file>
+      <file>$PROJ_DIR$\src\Sources\H\Frame_H\sysinit.h</file>
+      <file>$PROJ_DIR$\src\Sources\H\Frame_H\vectors.h</file>
+      <file>$PROJ_DIR$\src\Sources\H\includes.h</file>
+      <file>$PROJ_DIR$\src\LQ12864.c</file>
+      <file>$PROJ_DIR$\src\LQ12864.h</file>
+      <file>$PROJ_DIR$\bin\Flash\List\vectors.lst</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\LQ12864.pbi</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$PROJ_DIR$\bin\Flash\List\LCD.lst</file>
+      <file>$PROJ_DIR$\bin\Flash\List\light.lst</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\src\LCD.c</file>
+      <file>$PROJ_DIR$\src\dma.h</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\light.o</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\sysinit.o</file>
+      <file>$PROJ_DIR$\bin\Flash\List\wdog.s</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\main.o</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\vectors.o</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\start.pbi</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\common.o</file>
+      <file>$PROJ_DIR$\bin\Flash\List\saonian_GO.map</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\sysinit.pbi</file>
+      <file>$PROJ_DIR$\bin\Flash\List\dma.lst</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\uart.pbi</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\crt0.o</file>
+      <file>$PROJ_DIR$\bin\Flash\List\LCD.s</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$PROJ_DIR$\bin\Flash\List\main.s</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\dma.pbi</file>
+      <file>$PROJ_DIR$\bin\Flash\List\LQ12864.s</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\light.pbd</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\LCD.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\bin\Flash\List\crt0.lst</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\uart.o</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\wdog.pbi</file>
+      <file>$PROJ_DIR$\bin\Flash\List\isr.s</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\LQ12864.o</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\wdog.o</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\vectors.pbi</file>
+      <file>$PROJ_DIR$\bin\Flash\List\main.lst</file>
+      <file>$PROJ_DIR$\bin\Flash\List\sysinit.lst</file>
+      <file>$PROJ_DIR$\bin\Flash\List\isr.lst</file>
+      <file>$PROJ_DIR$\bin\Flash\List\wdog.lst</file>
+      <file>$PROJ_DIR$\bin\Flash\List\gpio.lst</file>
+      <file>$PROJ_DIR$\bin\Flash\List\start.s</file>
+      <file>$PROJ_DIR$\bin\Flash\List\light.s</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\light.pbi</file>
+      <file>$PROJ_DIR$\bin\Flash\List\vectors.s</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$PROJ_DIR$\bin\Flash\List\uart.lst</file>
+      <file>$PROJ_DIR$\src\Sources\C\main.c</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\start.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\gpio.pbi</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\main.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$PROJ_DIR$\bin\Flash\List\uart.s</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\gpio.o</file>
+      <file>$PROJ_DIR$\bin\Flash\Exe\light.srec</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\saonian_GO.pbd</file>
+      <file>$PROJ_DIR$\bin\Flash\Exe\saonian_GO.out</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\isr.pbi</file>
+      <file>$PROJ_DIR$\bin\Flash\Exe\saonian_GO.srec</file>
+      <file>$PROJ_DIR$\bin\Flash\List\gpio.s</file>
+      <file>$PROJ_DIR$\bin\Flash\Exe\LQ_DMAov7620.out</file>
+      <file>$PROJ_DIR$\bin\Flash\List\common.s</file>
+      <file>$PROJ_DIR$\src\dma.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\LQ_DMAov7620.pbd</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\LCD.pbi</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\common.pbi</file>
+      <file>$PROJ_DIR$\bin\Flash\List\start.lst</file>
+      <file>$PROJ_DIR$\bin\Flash\List\common.lst</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\isr.o</file>
+      <file>$PROJ_DIR$\bin\Flash\List\sysinit.s</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$PROJ_DIR$\bin\Flash\List\LQ12864.lst</file>
+      <file>$PROJ_DIR$\bin\Flash\Obj\dma.o</file>
+      <file>$PROJ_DIR$\bin\Flash\Exe\LQ_DMAov7620.srec</file>
+      <file>$PROJ_DIR$\bin\Flash\Exe\light.out</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 88 43</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Project_Settings\Startup_Code\crt0.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 47 57</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Project_Settings\Startup_Code\start.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 69 100 77</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 41</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 20 21 38 83 79 56 49 55 78 32 0 22</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20 21 38 83 79 56 55 78 32 0 22</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Sources\C\Component_C\gpio.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 91 68 85</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 80</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 11 20 21 38 83 79 56 49 55 78 32</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 11 20 21 38 83 79 56 55 78 32</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Sources\C\Component_C\light.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 70 31 35</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 72</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 15 20 21 38 83 79 56 49 55 78 32 11</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15 20 21 38 83 79 56 55 78 32 11</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Sources\C\Component_C\uart.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 84 75 58</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 46</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 19 20 21 38 83 79 56 49 55 78 32</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 19 20 21 38 83 79 56 55 78 32</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Sources\C\Component_C\wdog.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 37 67 62</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 59</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 0 20 21 38 83 79 56 49 55 78 32</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0 20 21 38 83 79 56 55 78 32</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Sources\C\Frame_C\common.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 93 101 42</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 99</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 20 21 38 83 79 56 49 55 78 32</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20 21 38 83 79 56 55 78 32</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Sources\C\Frame_C\sysinit.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 103 65 36</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 22 20 21 38 83 79 56 49 55 78 32</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22 20 21 38 83 79 56 55 78 32</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Sources\C\Frame_C\vectors.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 73 27 40</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 63</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 23 20 21 38 83 79 56 49 55 78 32</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 23 20 21 38 83 79 56 55 78 32</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 50 64 39</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 81</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 95 83 79 56 49 55 78 32 104 82 24 20 21 38 15 11 19 17 14 26 16 18</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 95 83 79 56 55 78 32 104 82 24 20 21 38 15 11 19 17 14 26 16 18</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Sources\C\isr.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 60 66 102</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 89</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 24 20 21 38 83 79 56 49 55 78 32 15 11</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24 20 21 38 83 79 56 55 78 32 15 11</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\LQ12864.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 52 105 61</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 24 20 21 38 83 79 56 49 55 78 32 15 11 26</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24 20 21 38 83 79 56 55 78 32 15 11 26</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\LCD.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 48 30 54</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 98</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 21 38 83 79 56 49 55 78 32</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 21 38 83 79 56 55 78 32</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\Flash\Obj\light.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 99 80 89 72 81 41 44 46 63 59</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Sources\C\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 50 64 39</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 81</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 24 20 21 38 83 79 56 49 55 78 32 15 11</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24 20 21 15 11</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\Flash\Obj\saonian_GO.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 28 99 80 89 72 81 41 44 46 63 59</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\Flash\Exe\saonian_GO.out</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 43</file>
+        </tool>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 90</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 1 61 42 47 85 102 35 39 77 36 58 40 62 29 74 96 71</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\Flash\Exe\LQ_DMAov7620.out</name>
+      <outputs>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 107</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 1 42 47 85 102 35 39 77 36 58 40 62 29 74 96 71</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\dma.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 45 106</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 51</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 20 21 38 83 79 56 49 55 78 32 11 34</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20 21 38 83 79 56 55 78 32 11 34</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\Flash\Obj\LQ_DMAov7620.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 99 80 89 72 81 41 44 46 63 59</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\Flash\Exe\light.out</name>
+      <outputs>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 86</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 1 42 47 85 102 35 39 77 36 58 40 62 29 74 96 71</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>RAM</name>
+    <outputs>
+      <file>$PROJ_DIR$\src\Sources\H\Component_H\wdog.h</file>
+      <file>$PROJ_DIR$\src\Project_Settings\Startup_Code\crt0.s</file>
+      <file>$PROJ_DIR$\src\Project_Settings\Link\Ram.icf</file>
+      <file>$PROJ_DIR$\src\Project_Settings\Startup_Code\start.c</file>
+      <file>$PROJ_DIR$\src\Sources\C\Component_C\gpio.c</file>
+      <file>$PROJ_DIR$\src\Sources\C\Component_C\light.c</file>
+      <file>$PROJ_DIR$\src\Sources\C\Component_C\uart.c</file>
+      <file>$PROJ_DIR$\src\Sources\C\Component_C\wdog.c</file>
+      <file>$PROJ_DIR$\src\Sources\C\Frame_C\common.c</file>
+      <file>$PROJ_DIR$\src\Sources\C\Frame_C\sysinit.c</file>
+      <file>$PROJ_DIR$\src\Sources\C\Frame_C\vectors.c</file>
+      <file>$PROJ_DIR$\src\Sources\H\Component_H\gpio.h</file>
+      <file>$PROJ_DIR$\src\main.c</file>
+      <file>$PROJ_DIR$\src\Sources\C\isr.c</file>
+      <file>$PROJ_DIR$\src\Sources\H\Component_H\IR.h</file>
+      <file>$PROJ_DIR$\src\Sources\H\Component_H\light.h</file>
+      <file>$PROJ_DIR$\src\lptmr.h</file>
+      <file>$PROJ_DIR$\src\keyboard.h</file>
+      <file>$PROJ_DIR$\src\keyboard_PD.h</file>
+      <file>$PROJ_DIR$\src\Sources\H\Component_H\uart.h</file>
+      <file>$PROJ_DIR$\src\Sources\H\Frame_H\common.h</file>
+      <file>$PROJ_DIR$\src\Sources\H\Frame_H\MK60N512VMD100.h</file>
+      <file>$PROJ_DIR$\src\Sources\H\Frame_H\sysinit.h</file>
+      <file>$PROJ_DIR$\src\Sources\H\Frame_H\vectors.h</file>
+      <file>$PROJ_DIR$\src\Sources\H\includes.h</file>
+      <file>$PROJ_DIR$\src\LQ12864.c</file>
+      <file>$PROJ_DIR$\src\LQ12864.h</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\src\LCD.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\bin\Ram\Exe\uart_loop.out</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\uart.pbi</file>
+      <file>$PROJ_DIR$\bin\Ram\List\light.s</file>
+      <file>$PROJ_DIR$\bin\Ram\Exe\LQ_DMA_LCD.srec</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\LQ_DMAov7620.pbd</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\gpio.pbi</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\LQ12864.pbi</file>
+      <file>$PROJ_DIR$\bin\Ram\Exe\LQ_DMAov7620.srec</file>
+      <file>$PROJ_DIR$\bin\Ram\List\crt0.lst</file>
+      <file>$PROJ_DIR$\bin\Ram\Exe\saonian_GO.out</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\uart.o</file>
+      <file>$PROJ_DIR$\bin\Ram\List\saonian_GO.map</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\sysinit.o</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\common.o</file>
+      <file>$PROJ_DIR$\bin\Ram\List\light.lst</file>
+      <file>$PROJ_DIR$\bin\Ram\Exe\light.out</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\isr.pbi</file>
+      <file>$PROJ_DIR$\bin\Ram\List\start.s</file>
+      <file>$PROJ_DIR$\bin\Ram\Exe\light.srec</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\start.pbi</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\light.pbi</file>
+      <file>$PROJ_DIR$\bin\Ram\List\main.lst</file>
+      <file>$PROJ_DIR$\bin\Ram\List\common.s</file>
+      <file>$PROJ_DIR$\bin\Ram\Exe\LQ_P_PORT.srec</file>
+      <file>$PROJ_DIR$\bin\Ram\List\LCD.lst</file>
+      <file>$PROJ_DIR$\bin\Ram\List\isr.s</file>
+      <file>$PROJ_DIR$\bin\Ram\List\start.lst</file>
+      <file>$PROJ_DIR$\bin\Ram\List\LQ12864.lst</file>
+      <file>$PROJ_DIR$\bin\Ram\List\wdog.lst</file>
+      <file>$PROJ_DIR$\bin\Ram\Exe\LQ_P_PORT.out</file>
+      <file>$PROJ_DIR$\bin\Ram\Exe\saonian_GO.srec</file>
+      <file>$PROJ_DIR$\bin\Ram\List\vectors.lst</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\vectors.o</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\sysinit.pbi</file>
+      <file>$PROJ_DIR$\bin\Ram\List\gpio.lst</file>
+      <file>$PROJ_DIR$\bin\Ram\Exe\LQ_DMAov7620.out</file>
+      <file>$PROJ_DIR$\bin\Ram\List\LQ12864.s</file>
+      <file>$PROJ_DIR$\bin\Ram\List\gpio.s</file>
+      <file>$PROJ_DIR$\bin\Ram\List\common.lst</file>
+      <file>$PROJ_DIR$\bin\Ram\List\sysinit.lst</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\light.o</file>
+      <file>$PROJ_DIR$\bin\Ram\List\uart.s</file>
+      <file>$PROJ_DIR$\bin\Ram\List\vectors.s</file>
+      <file>$PROJ_DIR$\bin\Ram\Exe\LQ_light.out</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\wdog.pbi</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\common.pbi</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$PROJ_DIR$\src\Sources\C\main.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$PROJ_DIR$\bin\Ram\Exe\LQ_light.srec</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\LQ12864.o</file>
+      <file>$PROJ_DIR$\bin\Ram\List\LCD.s</file>
+      <file>$PROJ_DIR$\bin\Ram\Exe\LQ_DMA_LCD.out</file>
+      <file>$PROJ_DIR$\bin\Ram\List\uart.lst</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\LQ_DMA_LCD.pbd</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\LQ_P_PORT.pbd</file>
+      <file>$PROJ_DIR$\bin\Ram\List\sysinit.s</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\main.o</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\crt0.o</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\light.pbd</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\isr.o</file>
+      <file>$PROJ_DIR$\bin\Ram\List\wdog.s</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\vectors.pbi</file>
+      <file>$PROJ_DIR$\bin\Ram\Exe\uart_loop.srec</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\gpio.o</file>
+      <file>$PROJ_DIR$\bin\Ram\List\isr.lst</file>
+      <file>$PROJ_DIR$\bin\Ram\List\main.s</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\LQ_light.pbd</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\saonian_GO.pbd</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\LCD.pbi</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\start.o</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\LCD.o</file>
+      <file>$PROJ_DIR$\bin\Ram\Obj\wdog.o</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 45 43</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Project_Settings\Startup_Code\crt0.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 100 42</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Project_Settings\Startup_Code\start.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 51 60 112</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 53</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 20 21 30 87 85 33 31 32 84 28 0 22</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20 21 30 87 85 33 32 84 28 0 22</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Sources\C\Component_C\gpio.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 71 68 106</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 11 20 21 30 87 85 33 31 32 84 28</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 11 20 21 30 87 85 33 32 84 28</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Sources\C\Component_C\light.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 36 48 74</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 54</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 15 20 21 30 87 85 33 31 32 84 28 11</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15 20 21 30 87 85 33 32 84 28 11</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Sources\C\Component_C\uart.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 75 95 44</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 19 20 21 30 87 85 33 31 32 84 28</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 19 20 21 30 87 85 33 32 84 28</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Sources\C\Component_C\wdog.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 103 62 114</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 0 20 21 30 87 85 33 31 32 84 28</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0 20 21 30 87 85 33 32 84 28</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Sources\C\Frame_C\common.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 56 72 47</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 80</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 20 21 30 87 85 33 31 32 84 28</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20 21 30 87 85 33 32 84 28</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Sources\C\Frame_C\sysinit.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 98 73 46</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 67</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 22 20 21 30 87 85 33 31 32 84 28</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22 20 21 30 87 85 33 32 84 28</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Sources\C\Frame_C\vectors.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 76 65 66</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 104</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 23 20 21 30 87 85 33 31 32 84 28</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 23 20 21 30 87 85 33 32 84 28</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 108 55 99</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 78</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 88 87 85 33 31 32 84 28 90 86 24 20 21 30 15 11 19 17 14 26 16 18</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 88 87 85 33 32 84 28 90 86 24 20 21 30 15 11 19 17 14 26 16 18</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Sources\C\isr.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 107 102</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 50</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 24 20 21 30 87 85 33 31 32 84 28 15 11</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24 20 21 30 87 85 33 32 84 28 15 11</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\LQ12864.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 70 61 92</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 40</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 24 20 21 30 87 85 33 31 32 84 28 15 11 26</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24 20 21 30 87 85 33 32 84 28 15 11 26</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\LCD.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 93 58 113</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 111</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 21 30 87 85 33 31 32 84 28</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 21</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\Ram\Exe\uart_loop.out</name>
+      <outputs>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 105</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\Ram\Obj\LQ_DMAov7620.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 111 80 39 50 54 78 53 67 35 104 79</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\Ram\Exe\saonian_GO.out</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 45</file>
+        </tool>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 64</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 2 92 47 100 106 102 74 99 112 46 44 66 114 27 82 89 81</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\Ram\Exe\light.out</name>
+      <outputs>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 52</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\Ram\Exe\LQ_P_PORT.out</name>
+      <outputs>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 57</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\Ram\Exe\LQ_DMAov7620.out</name>
+      <outputs>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 41</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 2 113 47 100 106 102 74 99 112 46 44 66 114 27 82 89 81</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\Ram\Exe\LQ_light.out</name>
+      <outputs>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 91</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 2 47 100 106 102 74 99 112 46 44 66 114 27 82 89 81</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\Sources\C\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 108 55 99</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 78</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 24 20 21 30 87 85 33 31 32 84 28 15 11</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\Ram\Exe\LQ_DMA_LCD.out</name>
+      <outputs>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 37</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 2 113 47 100 106 102 74 99 112 46 44 66 114 27 82 89 81</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\Ram\Obj\LQ_DMA_LCD.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 111 80 39 50 54 78 53 67 35 104 79</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\Ram\Obj\LQ_P_PORT.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 80 39 50 54 78 53 67 35 104 79</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\Ram\Obj\light.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 80 39 50 54 78 53 67 35 104 79</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\Ram\Obj\LQ_light.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 80 39 50 54 78 53 67 35 104 79</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bin\Ram\Obj\saonian_GO.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 40 80 39 50 54 78 53 67 35 104 79</file>
+        </tool>
+      </inputs>
+    </file>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

@@ -1,0 +1,265 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.30.1.53127/W32 for ARM     09/Jun/2013  15:47:14 #
+# Copyright 1999-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  F:\国际车\0609\src\dma.c                                 #
+#    Command line =  F:\国际车\0609\src\dma.c -D IAR -D TWR_K60N512 -lCN      #
+#                    F:\国际车\0609\bin\Flash\List\ -lB                       #
+#                    F:\国际车\0609\bin\Flash\List\ -o                        #
+#                    F:\国际车\0609\bin\Flash\Obj\ --no_cse --no_unroll       #
+#                    --no_inline --no_code_motion --no_tbaa --no_clustering   #
+#                    --no_scheduling --debug --endian=little --cpu=Cortex-M4  #
+#                    -e --fpu=None --dlib_config                              #
+#                    E:\学习程序\arm\INC\c\DLib_Config_Normal.h -I            #
+#                    F:\国际车\0609\src\Sources\H\ -I                         #
+#                    F:\国际车\0609\src\Sources\H\Component_H\ -I             #
+#                    F:\国际车\0609\src\Sources\H\Frame_H\ -Ol                #
+#                    --use_c++_inline                                         #
+#    List file    =  F:\国际车\0609\bin\Flash\List\dma.lst                    #
+#    Object file  =  F:\国际车\0609\bin\Flash\Obj\dma.o                       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+F:\国际车\0609\src\dma.c
+      1          #include "common.h"
+      2          #include "gpio.h"
+      3          //#include "PIT.h"
+      4          #include "dma.h"
+      5          
+      6          //u8 counttempaddr;
+      7          #define COUNTSADDR   0x4004000C  //(&counttempaddr)
+      8          #define COUNTDADDR   0x4004000C  //(&counttempaddr)
+      9          
+     10          uint32 count_init[16];         //用来保存16个通道的初始化计数值
+     11          
+     12          
+     13          
+     14          /*************************************************************************
+     15          *                             野火嵌入式开发工作室
+     16          *
+     17          *  函数名称：DMA_PORTx2BUFF_Init
+     18          *  功能说明：DMA初始化，读取端口数据到内存
+     19          *  参数说明：DMA_CHn              通道号（DMA_CH0 ~ DMA_CH15）
+     20          *            SADDR                源地址( (void * )&PTx_BYTEn_IN 或 (void * )&PTx_WORDn_IN   )
+     21          *            DADDR                目的地址
+     22          *            PTxn                 触发端口
+     23          *            DMA_BYTEn            每次DMA传输字节数
+     24          *            count                一个主循环传输字节数
+     25          *            DMA_PORTx2BUFF_cfg   DMA传输配置
+     26          *  函数返回：无
+     27          *  修改时间：2012-2-20
+     28          *  备    注：
+     29          *************************************************************************/
+     30          /*void DMA_PORTx2BUFF_Init(DMA_CHn CHn, void *SADDR, void *DADDR, PTxn ptxn, DMA_BYTEn byten, uint32 count, DMA_PORTx2BUFF_cfg cfg)
+     31          {
+     32              uint8 n, i, tmp;
+     33          
+     34              ASSERT(                                             //用断言检测 源地址和每次传输字节数是否正确
+     35                  (   (byten == DMA_BYTE1)                    //传输一个字节
+     36                      && ( (SADDR >= &PTA_BYTE0_IN) && (SADDR <= ( &PTE_BYTE3_IN )))
+     37                  )
+     38          
+     39                  || (   (byten == DMA_BYTE2)                   //传输两个字节(注意，不能跨端口)
+     40                         && ( (SADDR >= &PTA_BYTE0_IN)
+     41                              && (SADDR <= ( &PTE_WORD1_IN ))
+     42                              && (((uint32)SADDR & 0x03) != 0x03) )         //保证不跨端口
+     43                     )
+     44          
+     45                  || (   (byten == DMA_BYTE4)                   //传输四个字节
+     46                         && ((SADDR >= &PTA_BYTE0_IN) && (SADDR <= ( &PTE_BYTE0_IN )))
+     47                         && (((uint32)SADDR & 0x03) == 0x00)           //保证不跨端口
+     48                     )
+     49              );
+     50          
+     51              uint8 BYTEs = (byten == DMA_BYTE1 ? 1 : (byten == DMA_BYTE2 ? 2 : (byten == DMA_BYTE4 ? 4 : 16 ) ) ); //计算传输字节数
+     52          
+     53              //开启时钟 
+     54              SIM_SCGC7 |= SIM_SCGC7_DMA_MASK;                        //打开DMA模块时钟
+     55              SIM_SCGC6 |= SIM_SCGC6_DMAMUX_MASK;                     //打开DMA多路复用器时钟
+     56          
+     57              // 配置 DMA 通道 的 传输控制块 TCD ( Transfer Control Descriptor ) 
+     58              DMA_SADDR(CHn) =    (uint32)SADDR;                         // 设置  源地址
+     59              DMA_DADDR(CHn) =    (uint32)DADDR;                         // 设置目的地址
+     60              DMA_SOFF(CHn)  =    0x00u;                              // 设置源地址偏移 = 0x0, 即不变
+     61              DMA_DOFF(CHn)  =    BYTEs;                              // 每次传输后，目的地址加 BYTEs
+     62          
+     63              DMA_ATTR(CHn)  =    (0
+     64                                   | DMA_ATTR_SMOD(0x0)                // 源地址模数禁止  Source address modulo feature is disabled
+     65                                   | DMA_ATTR_SSIZE(byten)             // 源数据位宽 ：DMA_BYTEn  。    SSIZE = 0 -> 8-bit ，SSIZE = 1 -> 16-bit ，SSIZE = 2 -> 32-bit ，SSIZE = 4 -> 16-byte
+     66                                   | DMA_ATTR_DMOD(0x0)                // 目标地址模数禁止
+     67                                   | DMA_ATTR_DSIZE(byten)             // 目标数据位宽 ：DMA_BYTEn  。  设置参考  SSIZE
+     68                                  );
+     69          
+     70              DMA_CITER_ELINKNO(CHn)  = DMA_CITER_ELINKNO_CITER(count); //当前主循环次数
+     71              DMA_BITER_ELINKNO(CHn)  = DMA_BITER_ELINKYES_BITER(count);//起始主循环次数
+     72          
+     73          
+     74              DMA_CR &= ~DMA_CR_EMLM_MASK;                            // CR[EMLM] = 0
+     75          
+     76              //当CR[EMLM] = 0 时:
+     77              DMA_NBYTES_MLNO(CHn) =   DMA_NBYTES_MLNO_NBYTES(BYTEs); // 通道每次传输字节数，这里设置为BYTEs个字节。注：值为0表示传输4GB 
+     78          
+     79          
+     80              //配置 DMA 传输结束后的操作 
+     81              DMA_SLAST(CHn)      =   0;                              //调整  源地址的附加值,主循环结束后恢复  源地址
+     82              DMA_DLAST_SGA(CHn)  =   (uint32)( (cfg & 0x20) == 0 ? (-count)  : 0 ); //调整目的地址的附加值,主循环结束后恢复目的地址或者保持地址
+     83              DMA_CSR(CHn)        =   (0
+     84                                       | DMA_CSR_DREQ_MASK            //主循环结束后停止硬件请求
+     85                                       | DMA_CSR_INTMAJOR_MASK        //主循环结束后产生中断
+     86                                      );
+     87          
+     88              // 配置 DMA 触发源 
+     89              DMAMUX_CHCFG_REG(DMAMUX_BASE_PTR, CHn) = (0
+     90                      | DMAMUX_CHCFG_ENBL_MASK                        // Enable routing of DMA request 
+     91                      //| DMAMUX_CHCFG_TRIG_MASK                        // Trigger Mode: Periodic   PIT周期触发传输模式   通道1对应PIT1，必须使能PIT1，且配置相应的PIT定时触发 
+     92                      | DMAMUX_CHCFG_SOURCE((ptxn >> 5) + DMA_Port_A) // 通道触发传输源:     
+     93                                                       );
+     94          
+     95              SIM_SCGC5 |= (SIM_SCGC5_PORTA_MASK << (ptxn>>5));                                                               //开启PORTx端口
+     96              GPIO_PDDR_REG(GPIOx[(ptxn>>5)]) &= ~(1 << (ptxn & 0x1f));                                                       //设置端口方向为输入
+     97              PORT_PCR_REG(PORTX[(ptxn>>5)], (ptxn & 0x1F)) = ( 0
+     98                      | PORT_PCR_MUX(1)               // 复用GPIO
+     99                      | PORT_PCR_IRQC(cfg & 0x03 )    // 确定触发模式
+    100                      | ((cfg & 0xc0 ) >> 6)          // 开启上拉或下拉电阻，或者没有
+    101                                                              );
+    102              GPIO_PDDR_REG(GPIOx[(ptxn>>5)]) &= ~(1 << (ptxn && 0x1F));                                                      //输入模式
+    103          
+    104              //  配置输入源   
+    105              SIM_SCGC5 |= (SIM_SCGC5_PORTA_MASK << ((((uint32)SADDR) & 0x1ff)>>6));             //开启PORTx端口
+    106              switch(byten)
+    107              {
+    108              case DMA_BYTE1:
+    109                  *((uint8 *)((uint32)SADDR + 4)) = 0;   //设置为输入方向。为什么加4？PDIR地址加4后，就变成对应的PDDR地址
+    110                  break;
+    111              case DMA_BYTE2:
+    112                  *((uint16 *)((uint32)SADDR + 4)) = 0;
+    113                  break;
+    114              case DMA_BYTE4:
+    115                  *((uint32 *)((uint32)SADDR + 4)) = 0;
+    116                  break;
+    117              default:
+    118                  assert_failed(__FILE__, __LINE__);
+    119                  break;
+    120              }
+    121          
+    122              //  输入源管脚选择功能脚  
+    123              n = (uint8)(((uint32)SADDR - ((uint32)(&PTA_BYTE0_IN))) & 0x3f);         //最小的引脚号
+    124              tmp = n + (BYTEs << 3);                                         //最大的引脚号
+    125              for(i = n; i < tmp; i++)
+    126              {
+    127                  PORT_PCR_REG(PORTX[   ((((uint32)SADDR)&0x1ff)>>6)    ], i) = (0
+    128                          | PORT_PCR_MUX(1)
+    129                          | GPI_DOWN             //输入源应该下拉，默认读取到的是0
+    130                                                                             );
+    131              }
+    132          
+    133              //开启中断 
+    134              //DMA_EN(CHn);                                    //使能通道CHn 硬件请求
+    135              //DMA_IRQ_EN(CHn);                                //允许DMA通道传输
+    136          }*/
+    137          
+    138          
+    139          
+    140          
+    141          
+    142          /*************************************************************************
+    143          *                             野火嵌入式开发工作室
+    144          *
+    145          *  函数名称：DMA_count_Init
+    146          *  功能说明：DMA累加计数初始化
+    147          *  参数说明：DMA_CHn              通道号（DMA_CH0 ~ DMA_CH15）
+    148          *            PTxn                 触发端口
+    149          *            count                累加计数中断值
+    150          *            DMA_Count_cfg        DMA传输配置
+    151          *  函数返回：无
+    152          *  修改时间：2012-1-20
+    153          *  备    注：
+    154          *************************************************************************/
+    155          void DMA_count_Init(DMA_CHn CHn, PTxn ptxn, uint32 count, DMA_Count_cfg cfg)
+    156          {
+    157              uint8 byten = DMA_BYTE1;
+    158              uint8 BYTEs = (byten == DMA_BYTE1 ? 1 : (byten == DMA_BYTE2 ? 2 : (byten == DMA_BYTE4 ? 4 : 16 ) ) ); //计算传输字节数
+    159              if(count > 0x7FFF )count = 0x7FFF;
+    160              count_init[CHn] = count;
+    161          
+    162              /* 开启时钟 */
+    163              SIM_SCGC7 |= SIM_SCGC7_DMA_MASK;                        //打开DMA模块时钟
+    164              SIM_SCGC6 |= SIM_SCGC6_DMAMUX_MASK;                     //打开DMA多路复用器时钟
+    165          
+    166              /* 配置 DMA 通道 的 传输控制块 TCD ( Transfer Control Descriptor ) */
+    167              DMA_SADDR(CHn) =    (uint32)COUNTSADDR;                    // 设置  源地址
+    168              DMA_DADDR(CHn) =    (uint32)COUNTDADDR;                    // 设置目的地址
+    169              DMA_SOFF(CHn)  =    0;                                  // 设置源地址不变
+    170              DMA_DOFF(CHn)  =    0;                                  // 每次传输后，目的地址不变
+    171          
+    172              DMA_ATTR(CHn)  =    (0
+    173                                   | DMA_ATTR_SMOD(0x0)                // 源地址模数禁止  Source address modulo feature is disabled
+    174                                   | DMA_ATTR_SSIZE(byten)             // 源数据位宽 ：DMA_BYTEn  。    SSIZE = 0 -> 8-bit ，SSIZE = 1 -> 16-bit ，SSIZE = 2 -> 32-bit ，SSIZE = 4 -> 16-byte
+    175                                   | DMA_ATTR_DMOD(0x0)                // 目标地址模数禁止
+    176                                   | DMA_ATTR_DSIZE(byten)             // 目标数据位宽 ：DMA_BYTEn  。  设置参考  SSIZE
+    177                                  );
+    178          
+    179              DMA_CITER_ELINKNO(CHn)  = DMA_CITER_ELINKNO_CITER(count); //当前主循环次数
+    180              DMA_BITER_ELINKNO(CHn)  = DMA_BITER_ELINKYES_BITER(count);//起始主循环次数
+    181          
+    182              DMA_CR &= ~DMA_CR_EMLM_MASK;                            // CR[EMLM] = 0
+    183          
+    184              DMA_NBYTES_MLNO(CHn) =   DMA_NBYTES_MLNO_NBYTES(BYTEs); // 通道每次传输字节数，这里设置为BYTEs个字节。注：值为0表示传输4GB */
+    185          
+    186              /* 配置 DMA 传输结束后的操作 */
+    187              DMA_SLAST(CHn)      =   -count;                              //调整  源地址的附加值,主循环结束后恢复  源地址
+    188              DMA_DLAST_SGA(CHn)  =   0;                                  //调整目的地址的附加值,主循环结束后恢复目的地址或者保持地址
+    189              DMA_CSR(CHn)        =   (0
+    190                                       | DMA_CSR_DREQ_MASK            //主循环结束后停止硬件请求
+    191                                       | DMA_CSR_INTMAJOR_MASK        //主循环结束后产生中断
+    192                                      );
+    193          
+    194              /* 配置 DMA 触发源 */
+    195              DMAMUX_CHCFG_REG(DMAMUX_BASE_PTR, CHn) = (0
+    196                      | DMAMUX_CHCFG_ENBL_MASK                        /* Enable routing of DMA request */
+    197                      | DMAMUX_CHCFG_SOURCE((ptxn >> 5) + DMA_Port_A) /* 通道触发传输源:     */
+    198                                                       );
+    199          
+    200              SIM_SCGC5 |= (SIM_SCGC5_PORTA_MASK << (ptxn>>5));                                                               //开启PORTx端口
+    201              GPIO_PDDR_REG(GPIOx[(ptxn>>5)]) &= ~(1 << (ptxn & 0x1f));                                                       //设置端口方向为输入
+    202              PORT_PCR_REG(PORTB[(ptxn>>5)], (ptxn & 0x1F)) = ( 0
+    203                      | PORT_PCR_MUX(1)               // 复用GPIO
+    204                      | PORT_PCR_IRQC(cfg & 0x03 )    // 确定触发模式
+    205                      | ((cfg & 0xc0 ) >> 6)          // 开启上拉或下拉电阻，或者没有
+    206                                                              );
+    207              GPIO_PDDR_REG(GPIOx[(ptxn>>5)]) &= ~(1 << (ptxn && 0x1F));                                                      //输入模式
+    208          
+    209              /* 开启中断 */
+    210              DMA_EN(CHn);                                    //使能通道CHn 硬件请求
+    211              DMA_IRQ_EN(CHn);                                //允许DMA通道传输
+    212          }
+    213          
+    214          /*************************************************************************
+    215          *                             野火嵌入式开发工作室
+    216          *
+    217          *  函数名称：DMA_count_get
+    218          *  功能说明：返回累加计数值
+    219          *  参数说明：DMA_CHn              通道号（DMA_CH0 ~ DMA_CH15）
+    220          *  函数返回：累加计数值
+    221          *  修改时间：2012-3-320
+    222          *  备    注：
+    223          *************************************************************************/
+    224          uint32 DMA_count_get(DMA_CHn CHn)
+    225          {
+    226              uint32 temp =  count_init[CHn] - DMA_CITER_ELINKNO(CHn)  ;
+    227              return temp;
+    228          }
+    229          
+    230          void DMA_count_reset(DMA_CHn CHn)
+    231          {
+    232              DMA_CITER_ELINKNO(CHn) = count_init[CHn] ;
+    233          }
+    234          
+    235          
+
+Errors: 3
+Warnings: none
